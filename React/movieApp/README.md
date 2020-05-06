@@ -1,9 +1,11 @@
 # nomadCoder - ReactJS
-### React 세팅하기
+[repository](https://github.com/moonLIna/nomadcoders_movie_app)
+
+### 1. React 세팅하기
   -  git, React 설치   
   -  create-react-app   
   
-### JSX & Props
+### 2. JSX & Props
   - JSX = javascript + html
   - React component 특징   
     + component -> component, children component로 정보 보내는 것 가능   
@@ -22,4 +24,3 @@
       );
     }
     ```
-    

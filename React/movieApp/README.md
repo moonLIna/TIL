@@ -1,9 +1,23 @@
 # nomadCoder - ReactJS
 [repository](https://github.com/moonLIna/nomadcoders_movie_app)
 
+### 0 .git
+  - git init :: 저장소 생성
+  - git add *파일명* ( git add * ) :: 변경한 파일 스테이지에 기록
+  - git commit -m "message" :: commit하고 msg 입력
+  - git push *origin* *master* :: 위의 과정을 거친 코드 git 반영
+  
 ### 1. React 세팅하기
-  -  git, React 설치   
-  -  create-react-app   
+  - git, React 설치   
+  - create-react-app 
+    싱글 페이지 어플리케이션 개발을 도와주는 React 툴체인
+    ```JavaScipt
+    npx create-react-app applicaion_name
+    cd applicaion_name
+    npm start
+    
+    npm run build
+    ```
   
 ### 2. JSX & Props
   - JSX = javascript + html

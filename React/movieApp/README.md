@@ -19,11 +19,11 @@
     npm run build
     ```
   
-### 2. JSX & Props
-  - JSX = javascript + html
+### 2. Props
   - React component 특징   
     + component -> component, children component로 정보 보내는 것 가능   
     + React component는 유일성이 필요해서 key값 필요
+    + 고유한 key값으로 할당할 속성이 없을시 자동으로 주는 index argument값을 사용해 key값 할당 
   - React application은 한 번에 하나의 component만 rendering 가능
   - JS mapping    
     array 각 item에서 function을 실행하는 array를 가지는 function
@@ -38,6 +38,7 @@
       );
     }
     ```
+    
 ### 3. PropTypes
   - Prop의 type을 체크해줌
   ```javascript
@@ -47,13 +48,15 @@
     propName : PropTypes.type.isRequired //isRequired는 해당 Prop이 필수일 때만 기입
   }
   ```
+  
 ### 4. class/function 차이
   - class component는 react component로 확장되서 screen에 표시되는 것    
   - class component의 render method 자동으로 실행
   - function는 render 될 때의 값들을 유지
   - class는 그렇지 않기 때문에 이를 원한다면 'const props = this.props;' 처럼 추가 필요 
   - class component의 기능이 필요하진 않을 때는 function을 사용할 것
-  
+    + react hook으로 인해 state를 쓰기 위해 class component를 사용할 필요 없음
+
 ### 5. state란?
   - 유동적인 데이터들을 넣어두는 곳으로 직접 변경할 수 없고 function,class 모두 사용 가능
   - setState()를 통해 데이터 값 변경 하면 state가 변경을 감지해 자동으로 render function 호출
@@ -71,6 +74,7 @@
   <button onClick = {this.add()}>text</button> // ()는 바로 실행 의미 
   <!-- react의 button에는 기본적으로 onClick Porp -->
   ```
+  
 ### 6. component life cycle란
   - React가 component를 생성하고 없애는 방법
   - function > render > function
@@ -97,7 +101,20 @@ componentDidMount(){
   - async/await(ES6)
     + async : 비동기 함수 선언
     + await : component에게 비동기 함수이니 기다렸다가 실행하라고 알려주는 것 
+
+### 8. JSX 
+  - JSX = javascript + html
+  - JSX 안에서는 class가 아닌 className 사용 (htmlFor도 동일한 경우)
+  - JSX는 표현식이므로 정규 JavaScript 함수 호출이 되고 JavaScript 객체로 인식이 가능
+  - 주의할 점
+    + 기본은 카멜케이스 표기법이지만 aria-* / data-* 는 예외이다.
+    + 무조건 닫는 태그가 존재해야 한다.
+    + 주석은 {/* 주석 */}로 사용한다.
+    + 두 개 이상의 element는 하나의 element로 감싸주어야 한다.
+     + 불필요한 <div>가 생기는 것을 피하려면 <fragment>를 사용
+    
 ----------------------------------------------------------------------------
+
 ### 99. 참고자료
 
 - [함수형 컴포넌트와 클래스, 어떤 차이가 존재할까? / overreact blog](https://overreacted.io/ko/how-are-function-components-different-from-classes/)

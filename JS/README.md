@@ -77,3 +77,13 @@
   Array.prototype.push.apply(obj, ['baz']);
   console.log(obj) // {'1': 'baz', name: 'foo', length : 2}
   ```
+### 3.6 기본 타입과 표준 메서드
+  - 기본 타입도 객체처럼 표준 메서드 호출
+  - 기본값은 메서드 처리 순간 객체로 변환 => 타입별 표준 메서드 호출 => 기본값 복귀
+
+### 3.7 연산자
+  - typeof 결과
+    + number, string, boolean, undefined, function, object
+    + null, array도 object
+  - !!연산자는 피연산자를 불린값으로 변환
+  - object나 array는 비어있어도 true로 반환

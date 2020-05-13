@@ -6,5 +6,5 @@
 - 필요한 것만 README.MD에 기록한다.
 
 ## 목차
-- [CH3 - 자바스크립트 데이터 타입과 연산자](https://github.com/river994/TIL/blob/master/JS/CH3/README.md)
-- [CH4 - 함수와 프로토타입 체이닝]()
+- [CH3 - 자바스크립트 데이터 타입과 연산자](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH3/README.md)
+- [CH4 - 함수와 프로토타입 체이닝](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH4)

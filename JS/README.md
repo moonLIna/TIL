@@ -33,5 +33,47 @@
   ```
   - 부모 객체는 동적으로 변경 가능
   
-  ### 3.5 배열
+### 3.5 배열
+  - 배열의 크기는 현재 배열의 인덱스 중 가장 큰 값을 기준
+  - 배열의 길이와 실제 메모리 할당은 동일하지 않음
+  - 배열 메서드는 length 프로퍼티 기반으로 동작
+  - 배열 역시 객체이지만 차이가 있음
+     + 배열 역시 객체이기 때문에 typeof 결과는 object
+     + 배열과 객체는 부모인 프로토타입 객체가 서로 다름
+     + 배열 => Array.prototype => Object.prototype
+     + 객체 => Object.prototype
+     + 배열도 객체처럼 동적 프로퍼티 추가 가능
+     ```javaScript
+     var arr=[0,1,2];
+     console.log(arr.length) // 3
+     arr.name = 'numberArray';
+     console.log(arr.length) // 3로 동적 프로퍼티 추가 시 length값 부동
+     ```
+  - for in => 모든 프로퍼티 열거 / 동적 프로퍼티도 출력 
+  ```javaScript
+  for (var prop in arr){
+    console.log(prop, arr[prop]);
+  } // 0 0, 1 1, 2 2, name numberArray
+  for(var i = 0; i < arr.length; i++){
+    console.log(i, arr[i]);
+  } // 0 0, 1 1, 2 2
+  ```
+  - 배열의 값 삭제 시 delete 연산자, 요소 삭제 시 splice() 배열 메서드 
+  - Array 생성자 함수는 호출 시 인자 개수에 따라 동작 상이
+  ```javaScript
+  var newArray = new Array(2);
+  console.log(newArray, newArray.length); // [undefined, undefined] 2
+  var numArray = new Array(0,1); // 배열 리터럴 방식이 더 적절
+  console.log(numArray, numArray.length); // [0, 1] 2
+  ```
+  - 유사 배열 객체란 length 프로퍼티를 가진 객체
+  ```javaScript
+  var arr = ['bar'];
+  var obj = {name : "foo", length : 1};
   
+  arr.push('baz');
+  console.log(arr); // ['bar', 'baz']
+  
+  Array.prototype.push.apply(obj, ['baz']);
+  console.log(obj) // {'1': 'baz', name: 'foo', length : 2}
+  ```

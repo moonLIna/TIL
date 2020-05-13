@@ -1,10 +1,3 @@
-# 인사이드 자바스크립트 공부
-[인사이드 자바스크립트](https://book.naver.com/bookdb/book_detail.nhn?bid=7400243)  송형주, 고현준 | 한빛미디어     
-[repository](https://codesandbox.io/s/insidejavascript-98k8g?file=/ch3.3/index.js)
-
-- 모든 코드는 따라한다.
-- 필요한 것만 README.MD에 기록한다.
-
 ### 3.1 자바스크립트 기본 타입
   - null은 typeof시 결과가 object
   - null타입인지 확인할 때 일치 연산자(===)를 통해 변수 값을 직접 비교

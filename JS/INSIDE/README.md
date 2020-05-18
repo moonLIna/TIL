@@ -12,5 +12,6 @@
     + [4.2 - 함수 객체 : 함수도 객체다](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH4/4.2)
     + [4.3 - 함수의 다양한 형태](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH4/4.3)
     + [4.4 - 함수 호출과 this](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH4/4.4)
+    + [4.5 - 프로토타입 체이닝](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH4/4.5)
 - [CH5 - 실행 컨텍스트와 클로저](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH5)
     + [5.1 - 실행 컨텍스트 개념](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH4/5.1)

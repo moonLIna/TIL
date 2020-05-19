@@ -19,7 +19,8 @@ function printFunc(){
   function printValue(){
     return value;
   }
-  console.log(printValue());
+  console.log(this.value); // value1
+  console.log(printValue()); // value2
 }
 printFunc();
 
@@ -29,7 +30,7 @@ function printVal(){
 }
 function printFunction(func){
   var val = "val2";
-  console.log(func());
+  console.log(val ,func());
 }
 printFunction(printVal);
 

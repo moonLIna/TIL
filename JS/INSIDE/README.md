@@ -15,3 +15,6 @@
     + [4.5 - 프로토타입 체이닝](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH4/4.5)
 - [CH5 - 실행 컨텍스트와 클로저](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH5)
     + [5.1 - 실행 컨텍스트 개념](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH4/5.1)
+    + [5.2 - 실행 컨텍스트 생성 과정](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH4/5.2)
+    + [5.3 - 스코프 체인](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH4/5.3)
+    + [5.4 - 클로저](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH4/5.4)

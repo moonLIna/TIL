@@ -18,3 +18,5 @@
     + [5.2 - 실행 컨텍스트 생성 과정](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH4/5.2)
     + [5.3 - 스코프 체인](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH4/5.3)
     + [5.4 - 클로저](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH4/5.4)
+- [CH6 - 객체지향 프로그래밍](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH6)
+    + [6.1 - 클래스, 생성자, 메서드](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH6/6.1)

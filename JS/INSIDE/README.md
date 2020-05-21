@@ -20,3 +20,6 @@
     + [5.4 - 클로저](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH4/5.4)
 - [CH6 - 객체지향 프로그래밍](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH6)
     + [6.1 - 클래스, 생성자, 메서드](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH6/6.1)
+    + [6.2 - 상속](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH6/6.2)
+    + [6.3 - 캡슐화](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH6/6.3)
+    + [6.4 - 객체지향 프로그래밍 응용 예제](https://github.com/river994/TIL/tree/master/JS/INSIDE/CH6/6.4)

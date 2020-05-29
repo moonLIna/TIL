@@ -50,7 +50,8 @@ var objHello = new HelloFunc();
 objHello.func = userFunc;
 
 objHello.call();
-Hello = new HelloFunc();
+console.log(objHello, HelloFunc);
+// Hello = new HelloFunc();
 
 // 하나 이상의 인자를 넘길 경우
 function saySomething(obj, methodName, name){
@@ -148,7 +149,7 @@ exam(-10);
 2. exam, x = 5
     num = 40 + 5; num = 45
 3. exam, x = -10
-    num = 45 - 10; 30
+    num = 45 - 10; 35
 */
 
 // 5.4.3.2 하나의 클로저가 여러 함수 객체의 스코프 체인에 들어가 있는 경우도 있다.
@@ -160,8 +161,8 @@ function testfunc(){
   };
 };
 var exam2 = testfunc();
-exam2.func1();
-exam2.func2();
+exam2.func1(); // 2
+exam2.func2(); //-2
 /*
 1. func.func1() -> console -> 2 // return x -> x = 2
 2. func.func2() -> console -> 0

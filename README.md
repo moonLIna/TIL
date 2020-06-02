@@ -5,7 +5,7 @@
 
 #### React
  * [ReactJS로 웹 서비스 만들기](https://github.com/moonLIna/TIL/tree/master/React/movieApp)    
- * React 자습서 - tictacto(https://github.com/river994/TIL/tree/master/React/react_tutorial) 
+ * [React 자습서 - tictacto](https://github.com/river994/TIL/tree/master/React/react_tutorial) 
 
 #### Git
  * [Git 정리](https://github.com/moonLIna/TIL/tree/master/git)

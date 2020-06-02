@@ -11,13 +11,13 @@
   - git, React 설치   
   - create-react-app 
     싱글 페이지 어플리케이션 개발을 도와주는 React 툴체인
-    ```JavaScipt
-    npx create-react-app applicaion_name
-    cd applicaion_name
-    npm start
-    
-    npm run build
-    ```
+```javascript
+npx create-react-app applicaion_name
+cd applicaion_name
+npm start
+
+npm run build
+```
   
 ### 2. Props
   - React component 특징   

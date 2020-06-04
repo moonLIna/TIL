@@ -47,3 +47,7 @@ var [a,b] = [10, 100];
     return a * 2;
   })
   ```
+
+## `for` 반복문을 쓰고 싶다면?
+  - 보통 함수안에서 사용
+  - array에 HTML을 추가 -> return으로 HTML 반환

@@ -1,0 +1,81 @@
+html,body{width:100%;height:100%;font-weight:400;color:#262626; font-family: 'Nanum Gothic Coding', monospace; overflow-x: hidden;
+}
+html,body,div,span,object,h1,h2,h3,h4,h5,h6,p,
+blockquote,pre,abbr,address,cite,code,del,em,img,
+ins,q,strong,sub,sup,b,i,dl,dt,dd,ol,ul,li,a,
+fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,
+menu,nav,section,summary,time,mark,audio,video,button,input,select{margin:0;padding:0;border:0;vertical-align:baseline;-webkit-text-size-adjust:none;outline: none;}
+article, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display: block;}
+strong,b{font-weight:600;}
+ul,ol,li,dl{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after{content:'';content:none;}
+a,a:link,a:hover,a:active {text-decoration:none;cursor: pointer;}
+i,address{font-style:normal;font-weight:normal;}
+table{border-collapse:collapse; border-spacing:0;}
+img,fieldset{border:0;}
+hr,legend,caption{display:none;}
+textarea{resize:none;}
+textarea,input,select{border-radius:0;-webkit-apprearance:none;font-family:inherit;font-size:inherit;}
+label,button,input[type="submit"],input[type="reset"]{cursor:pointer;}
+input::-ms-clear {display: none;}
+button {background: transparent; border: none; width: inherit; height: inherit; cursor: pointer; overflow: visible;}
+select::-ms-expand {display: none;}
+a {color:inherit;text-decoration:none;}
+
+.blog-nav {
+  border-bottom: 2px solid #222;
+  width: 100%;
+  display: flex;
+  padding: 28px 40px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.posts-container { width: 70%; margin-left: 40px; margin-top: 12px;}
+
+.post-list { border-bottom: 2px solid #222; padding: 32px 20px 20px 0;}
+
+.post-header {font-size: 24px;}
+.post-header h3 {display: inline-block; padding-bottom: 8px; font-weight: bold;}
+.like-icon {font-size: 24px; float: right;}
+.posts-date { display: inline-block; font-size: 16px; vertical-align: super; margin-left: 8px;}
+.post-list > p {margin: 24px 0; font-size: 14px; line-height: 1.4;}
+
+.modal {padding: 20px 40px; background: #eee; margin: 20px 0;}
+
+/* .App-logo {
+  height: 40vmin;
+  pointer-events: none;
+} */
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -47,7 +47,43 @@ var [a,b] = [10, 100];
     return a * 2;
   })
   ```
+  - map 반복문 시 key props 필요 
 
 ## `for` 반복문을 쓰고 싶다면?
   - 보통 함수안에서 사용
   - array에 HTML을 추가 -> return으로 HTML 반환
+
+## props : 자식이 부모의 state를 가져다 쓰고 싶을 때
+  1. 부모컴포넌트 state 쓸 때 props 사용
+  2. <컴포넌트 명 작명={state명}/>
+  3. 자식컴포넌트에서 props 파라미터 입력 후 사용
+
+## input 다루기 : 사용자가 입력한 글을 변수에 저장하는 법
+  - `onChange, onInput={ (e)=>{e.target.value} }// 사용자가 입력한 값`
+
+## class를 이용한 옛날  React 문법
+  - class : 변수와 함수의 덩어리
+  - extends : React.Component의 성질을 상속 
+  - constructor : class의 초기값, 변수 저장 공간
+```javaScript
+class className extends React.Component {
+  constructor(){
+    super();
+    this.state = { stateName: 'stateDate' }
+  }
+  functionName(){
+    // bind(this)하기 싫으면
+    // functionName = () => {
+    // }
+  }
+  render(){
+    return (
+      <div onClick={this.functionName.bind(this)>
+        //HTML 넣어주세요
+      </div>
+    )
+  }
+}
+```
+  - class로 사용할 때 문제점은 JavaScript 문법을 모르면 사용하기 힘듬
+  - function 으로 새요소 만드는 방식 추천

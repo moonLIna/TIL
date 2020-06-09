@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
-import data from './data.js';
-
-function ProductItem(){
-  
-  let [product, changeProduct] = useState(data);
-
+function ProductItem(props){
   return (
-    <div className="col-md-4">
-      <img src={ product[0].src } width="100%"/>
-      <h4>{ product[0].title }</h4>
-      <p>{ product[0].content }</p>
+    <div className="col-md-4" >
+      <img src={ props.product.src } alt={props.product.alt} width="100%"/>
+      <h4>{ props.product.title }</h4>
+      <p>{ props.product.content }</p>
     </div>
   )
 }

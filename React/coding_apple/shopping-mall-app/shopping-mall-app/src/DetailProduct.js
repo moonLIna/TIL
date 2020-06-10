@@ -1,8 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import './sass.scss';
 
 function ProductDetail(props){
+  useEffect(()=>{
+    // let delayTimer = setTimeout(function(){
+    //   let alert = document.querySelector('.my-alert');
+    //   alert.parentNode.removeChild(alert);
+    // }, 2000)
+    let delayTimer = setTimeout(()=>{
+      hideAlert(false);
+      return ()=>{ clearTimeout(delayTimer) }; 
+    }, 2000)
+
+    return function delayComponent(){
+      // alert('품절되기 전에 33% 할인된 가격으로 구매해보세요!')
+    }
+  }, []);
+  let [alertStat, hideAlert] = useState(true);
   let { id } = useParams();
   /* let currentProd = props.product.find(function(prod){
     return prod.id == id
@@ -13,12 +28,18 @@ function ProductDetail(props){
     }
   });
   let history = useHistory();
+  let [inputData, changeData] = useState('');
 
   return(
     <div className="container">
-      <div className="my-alert">
-        <p>품절 임박</p>
-      </div>
+      <input onChange={ (e)=>{ changeData(e.target.value) } }/> { inputData }
+      {
+        alertStat === true
+        ? ( <div className="my-alert">
+          <p>품절 임박</p>
+        </div> )
+        : null
+      }
       <div className="row">
         <div className="col-md-6">
           <img src={ currentProd[0].src } alt={ currentProd[0].alt } width="100%" />

@@ -120,6 +120,80 @@ let titleText = styled.h4`
     @extend .my-alert; // css 상속
     background-color: blue;
   }
- 
 ```
-  
+
+## Lifecycle Hook & useEffect
+  - Lifecycle Hook란?
+    + 컴포넌트의 생명주기 중간 명령을 내리는 것
+
+```javascript
+class sampleClass extends React.Component { 
+  componentDidMount(){
+  }
+  componentWillUnmount(){
+  }
+}
+```
+  - useEffect Hook란?
+    + React 16.8 부터 사용 가능
+    + 컴포넌트가 mount 되었을 때, update 될 때 특정 코드를 실행할 수 있음
+
+```javascript
+import React, { useState, useEffect } from 'react'; // useEffect import 필요
+function ProductDetail(props){
+  useEffect(()=>{
+    // component 생성될 때 실행
+    return function funcName(){
+      // return function -> component 삭제 시 실행
+    }
+  });
+  useEffect(()=>{
+    // useEffect 여러개 사용 시 순서대로 실행
+  });
+}
+```
+## 컴포넌트 사라지는 코드 작성
+```javascript
+function ProductDetail(props){
+  useEffect(()=>{
+    let delayTimer = setTimeout(function(){
+      let alert = document.querySelector('.my-alert');
+      alert.parentNode.removeChild(alert);
+    }, 2000) // 내가 작성한 방식. JS 사용했고 UI 상태 저장 X
+
+    let delayTimer = setTimeout(()=>{
+      hideAlert(false);
+      return ()=>{ clearTimeout(delayTimer) };
+    }, 2000) // 강의 방식. useState로 UI 상태 저장해서 조건문으로 노출
+  });
+  let [alertStat, hideAlert] = useState(true);
+  return(
+    {
+      alertStat === true
+      ? <div className="my-alert">
+        <p>품절 임박</p>
+      </div>
+      : null
+    }
+  )
+}
+```
+  - 항상 보이는 UI가 아니라면 switch 를 통해 강의 방식대로 작성하는 것이 좋음
+  - `setTimeout` 함수 사용시 `clearTimeout` 함수 실행으로 버그 예방 
+
+```javascript
+let delayTimer = setTimeout(()=>{
+  return ()=>{ clearTimeout(delayTimer) };
+}, 2000)
+```
+
+## React update(rerender) 시 실행되는 useEffect
+```javascript
+let [alertStat, hideAlert] = useState(true);
+
+useEffect(()=>{
+  console.log('only in alert')
+}, [alertStat])
+```
+  - useEffect 함수의 `{}` 뒤에 `,[조건변수]` => `[조건변수]` 변경시에만 `{}` 실행
+  - `[조건변수]` 가 공백일 시 업데이트 시 실행 아예 안됨

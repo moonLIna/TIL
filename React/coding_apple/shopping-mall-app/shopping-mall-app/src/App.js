@@ -14,8 +14,8 @@ function App() {
       <Navbar bg="light" variant="light">
         <Navbar.Brand><Link to="/">KAKAO</Link></Navbar.Brand>
         <Nav className="ml-auto">
-          <Nav.Link><Link to="/">Home</Link></Nav.Link>
-          <Nav.Link><Link to="/detail">Detail</Link></Nav.Link>
+          <Nav.Link as={ Link } to="/">Home</Nav.Link>
+          <Nav.Link as={ Link } to="/detail/0">Detail</Nav.Link>
           <Nav.Link href="#pricing">Pricing</Nav.Link>
         </Nav>
       </Navbar>

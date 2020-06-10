@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App" style={{ marginBottom: 100 + 'px' }}>
       <Navbar bg="light" variant="light">
-        <Navbar.Brand><Link to="/">Kakao</Link></Navbar.Brand>
+        <Navbar.Brand><Link to="/">KAKAO</Link></Navbar.Brand>
         <Nav className="ml-auto">
           <Nav.Link><Link to="/">Home</Link></Nav.Link>
           <Nav.Link><Link to="/detail">Detail</Link></Nav.Link>
@@ -26,10 +26,13 @@ function App() {
           }
         </Route>
         <Route exact path="/detail/:id">
-          <ProductDetail product={ product } />
+          <ProductDetail product={ product }/>
         </Route>
         <Route path="/:id">
-          <div style={{position:'relative' }}>
+          <posRel>
+            <h3>적절하지 못한 접근입니다</h3>
+          </posRel>
+          <div style={{ position: 'relative' }}>
             <h3 style={{
               color: '#fff',
               position: 'absolute',
@@ -37,7 +40,7 @@ function App() {
               fontSize: '48px',
               top: '38%',
               left: '5%'
-            }}>적절하지 못한 접근입니다</h3>
+            }}></h3>
             <img src="https://t1.kakaocdn.net/friends/new_store/2.0/pc/banner_faq.png" width="100%" />
           </div>
         </Route>

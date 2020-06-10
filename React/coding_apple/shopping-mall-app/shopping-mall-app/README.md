@@ -20,7 +20,7 @@ import { var1, var2 } from './directory.js';
 ## 상품목록 Component화 + 반복문
   - `/* eslint-disable */` eslint warning 무시하기
   - props 전송법
-    + 1. `<자식컴포넌트 보낼이름={전송할 state} />`
+    + 1. `<자식컴포넌트 보낼이름={전송할 state} 다른방식="일반문자"/>`
     + 2. `function 자식컴포넌트(props){}`
     + 3. `props.보낼이름` 사용
   - map key값 설정 시 return 되는 부분에 key 값 줄 것
@@ -41,6 +41,7 @@ import { var1, var2 } from './directory.js';
   - HashRouter
     + 라우팅 안전하게 할 수 있게 도와줌
     + 사이트 주소 뒤에 #이 붙는데 # 뒤에 적는 것은 서버로 전달 X
+
   - BrowserRouter
     + 라우팅을 리액트가 아니라 서버에게 요청할 가능성이 있음
     + 이를 방지하기 위해 서버에 서버 라우팅 방지 API 작성 필요
@@ -70,4 +71,55 @@ import { var1, var2 } from './directory.js';
   - URL Parameter 이용하는 법
     + `import { useParams } from 'react-router-dom'` 
     + `let { varName } = useParams()` {사용자가 입력한 URL 파라미터}
-    + 데이터의 순서가 바뀐다면 상세페이지도 이상해짐
+
+## find 함수 사용
+```javascript
+let chkVal = useParams();
+let newVar = props.arrayName.find(function(arrayItem){
+  return arrayItem.propsName == chkVal
+})
+```
+
+## styled-components를 이용한 CSS 스타일링
+  - styled-components란?
+    + class 선언없이 컴포넌트에 CSS를 직접 적용 (CSS in JS)
+
+  - 사용하는 법
+    1. `npm install styled-components` in terminal
+    2. `import styled from 'styled-components'`
+    3. let componentName = styled.div` padding: 20px;`;
+
+```javascript
+let titleText = styled.h4`
+  font-size: 28px;
+  color: ${ props => props.color };
+`;
+```
+
+## SASS 사용하기
+  - SASS란?
+    + CSS pre-processor로 변수, 함수, 반복문, 연산자 등을 사용해 CSS의 가독성과 재사용성을 높이기 위한 CSS extension
+
+```javascript
+  npm install node-sass // in terminal
+
+  @import './reset.scss'; // import 문법
+
+  $main_color : red; // 변수 사용 가능
+  @mixin modal(){
+  } // 함수 만드는 mixin
+
+  .my-alert {
+    @include modal(); // 함수 사용시 @include 함수명()
+    background-color: $alert_color;
+    p {
+      margin-bottom: 0;
+    }
+  }// nesting 문법
+  .my-alert-notice {
+    @extend .my-alert; // css 상속
+    background-color: blue;
+  }
+ 
+```
+  

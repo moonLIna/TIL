@@ -5,6 +5,7 @@ import './App.css';
 import ProductItem from './product.js';
 import ProductDetail from './DetailProduct.js';
 import data from './data.js';
+import axios from 'axios';
 
 function App() {
   let [product, changeProduct] = useState(data);
@@ -74,6 +75,24 @@ function MainPage(props){
             })
           }
         </div>
+        <button 
+        className="btn btn-primary" 
+        style={{ 
+          margin: '0 auto', display: 'block', 
+          marginTop: '30px', padding: '8px 40px'
+        }}
+        onClick={()=>{
+          axios.get('https://codingapple1.github.io/shop/data2.json')
+          .then((result)=>{ 
+            console.log(result.data)
+          })
+          .catch(()=>{ 
+            console.log('fail')
+          })
+        }}
+        >
+          MORE
+        </button>
       </div>
     </div>
   )

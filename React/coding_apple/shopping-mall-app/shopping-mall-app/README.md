@@ -197,3 +197,43 @@ useEffect(()=>{
 ```
   - useEffect 함수의 `{}` 뒤에 `,[조건변수]` => `[조건변수]` 변경시에만 `{}` 실행
   - `[조건변수]` 가 공백일 시 업데이트 시 실행 아예 안됨
+
+## Ajax in React
+  - Ajax란?
+    + 서버에 새로고침 없이 요청을 할 수 있게 도와주는 것
+
+  - 요청의 종류
+    + GET 요청 : 특정 페이지 / 자료 읽기
+    + POST 요청 : 서버로 중요 정보 전달
+  
+  - Ajax 사용법
+    1. JQuery 설치 후 $.ajax() 사용
+    2. axios 설치 후 axios.get() 사용 // IE8 이상 가능
+    3. javaScript fetch() 사용 // IE 호환X
+  
+  - axios 사용법
+  ```javascript
+  npm install axios // in terminal
+
+  import axios from 'axios';
+  
+  function funcName(){
+    return (
+      <button onClick={ ()=>{ 
+        axios.get('url')
+        .then((result)=>{ 
+          console.log(result) // result.data 시 data 결과값만
+         })
+        .catch(()=>{  })
+        }}
+      >
+    )
+  }
+  ```
+  1. axios.get(데이터 요청할 URL)
+  2. axios.get().then(get요청 성공 시 실행할 코드)
+  3. axios.get().then().catch(get 요청 실패 시 실행할 코드)
+
+## axios와 fetch의 차이
+  - axios : JSON을 Object로 자동 변환
+  - fetch : 자동으로 자료 변환X Object로 변환하는 과정 필요

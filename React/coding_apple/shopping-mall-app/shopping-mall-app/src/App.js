@@ -9,7 +9,9 @@ import axios from 'axios';
 
 function App() {
   let [product, changeProduct] = useState(data);
-  
+  let [btnStat, changeBtnStat] = useState(true);
+  let [stock, changeStock] = useState([10,11,12]);
+
   return (
     <div className="App" style={{ marginBottom: 100 + 'px' }}>
       <Navbar bg="light" variant="light">
@@ -25,9 +27,32 @@ function App() {
           {
             <MainPage product={ product } />
           }
+          {
+            btnStat === true
+            ? <button 
+            className="btn btn-primary" 
+            style={{ 
+              margin: '0 auto', display: 'block', 
+              marginTop: '30px', padding: '8px 40px'
+            }}
+            onClick={()=>{
+              axios.get('https://codingapple1.github.io/shop/data2.json')
+              .then((result)=>{ 
+                changeProduct([...product, ...result.data]);
+                changeBtnStat(false);
+              })
+              .catch(()=>{ 
+                alert('fail to load data.JSON')
+              })
+            }}
+            >
+              MORE
+            </button>
+            : null
+          }
         </Route>
         <Route exact path="/detail/:id">
-          <ProductDetail product={ product }/>
+          <ProductDetail product={ product } stockNum={ stock } changeStock={ changeStock }/>
         </Route>
         <Route path="/:id">
           <posRel>
@@ -67,32 +92,14 @@ function MainPage(props){
       </Jumbotron>
       <div className="container">
         <div className="row">
-          {
-            data.map(function(a,i){
-              return(
-                <ProductItem product={props.product[i]} key={a.id}/>
-              )
-            })
-          }
+        {
+          props.product.map(function(a,i){
+            return(
+              <ProductItem product={props.product[i]} key={a.id}/>
+            )
+          })
+        }    
         </div>
-        <button 
-        className="btn btn-primary" 
-        style={{ 
-          margin: '0 auto', display: 'block', 
-          marginTop: '30px', padding: '8px 40px'
-        }}
-        onClick={()=>{
-          axios.get('https://codingapple1.github.io/shop/data2.json')
-          .then((result)=>{ 
-            console.log(result.data)
-          })
-          .catch(()=>{ 
-            console.log('fail')
-          })
-        }}
-        >
-          MORE
-        </button>
       </div>
     </div>
   )

@@ -29,10 +29,21 @@ function ProductDetail(props){
   });
   let history = useHistory();
   let [inputData, changeData] = useState('');
+  
+  function changeStockNum(id){
+    let tempArray = [...props.stockNum];
+    
+    if( tempArray[id] <= 0 ){
+      return 0;
+    } else {
+      tempArray[id] = tempArray[id] - 1;
+      props.changeStock(tempArray);
+    }
+  }
 
   return(
     <div className="container">
-      <input onChange={ (e)=>{ changeData(e.target.value) } }/> { inputData }
+      {/* <input onChange={ (e)=>{ changeData(e.target.value) } }/> { inputData } */}
       {
         alertStat === true
         ? ( <div className="my-alert">
@@ -47,12 +58,19 @@ function ProductDetail(props){
         <div className="col-md-6 mt-4">
           <h4 className="product-title">{ currentProd[0].title }</h4>
           <p>{ currentProd[0].price }</p>
+          <StockInfo prodStock={ props.stockNum[id] }></StockInfo>
           <p>{ currentProd[0].content }</p>
-          <button className="btn btn-danger">주문하기</button>
+          <button className="btn btn-danger" onClick={ ()=>{ changeStockNum(id) } }>주문하기</button>
         </div>
       </div>
-      <button className="btn btn-primary" onClick={ ()=>{ history.goBack() } }>뒤로가기</button>
+      <button className="btn btn-primary" onClick={ ()=>{ history.push('/') } }>뒤로가기</button>
     </div>
   ) 
+}
+
+function StockInfo(props){
+  return(
+    <p> 재고 : { props.prodStock } </p>
+  )
 }
 export default ProductDetail;

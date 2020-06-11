@@ -220,6 +220,7 @@ useEffect(()=>{
   function funcName(){
     return (
       <button onClick={ ()=>{ 
+        axios.post('url');
         axios.get('url')
         .then((result)=>{ 
           console.log(result) // result.data 시 data 결과값만
@@ -233,6 +234,9 @@ useEffect(()=>{
   1. axios.get(데이터 요청할 URL)
   2. axios.get().then(get요청 성공 시 실행할 코드)
   3. axios.get().then().catch(get 요청 실패 시 실행할 코드)
+  4. axios.post(서버 URL)
+
+  + component 로드시 ajax로 데이터 가지고 오고 싶다면 `useEffect(()=>{ axios.get() }, []);`
 
 ## axios와 fetch의 차이
   - axios : JSON을 Object로 자동 변환

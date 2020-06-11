@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import './sass.scss';
+import { stockContext } from './App.js';
 
 function ProductDetail(props){
+  let stock = useContext(stockContext);
   useEffect(()=>{
     // let delayTimer = setTimeout(function(){
     //   let alert = document.querySelector('.my-alert');

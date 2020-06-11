@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Navbar, Nav, Button, Jumbotron } from 'react-bootstrap';
 import { Link, Route, Switch } from 'react-router-dom';
 import './App.css';
@@ -6,6 +6,8 @@ import ProductItem from './product.js';
 import ProductDetail from './DetailProduct.js';
 import data from './data.js';
 import axios from 'axios';
+
+export let stockContext = React.createContext();
 
 function App() {
   let [product, changeProduct] = useState(data);
@@ -24,9 +26,11 @@ function App() {
       </Navbar>
       <Switch>
         <Route exact path="/">
-          {
-            <MainPage product={ product } />
-          }
+          <stockContext.Provider value={ stock }>
+            {
+              <MainPage product={ product }/>
+            }
+          </stockContext.Provider>
           {
             btnStat === true
             ? <button 
@@ -52,7 +56,9 @@ function App() {
           }
         </Route>
         <Route exact path="/detail/:id">
-          <ProductDetail product={ product } stockNum={ stock } changeStock={ changeStock }/>
+          <stockContext.Provider value={ stock }>
+            <ProductDetail product={ product } stockNum={ stock } changeStock={ changeStock }/>
+          </stockContext.Provider>
         </Route>
         <Route path="/:id">
           <posRel>
@@ -77,6 +83,7 @@ function App() {
 }
 
 function MainPage(props){
+  let stock = useContext(stockContext);
   return (
     <div>
       <Jumbotron className="image-container">
@@ -91,6 +98,7 @@ function MainPage(props){
         </p>
       </Jumbotron>
       <div className="container">
+        {/* { stock } */}
         <div className="row">
         {
           props.product.map(function(a,i){

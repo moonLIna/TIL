@@ -241,3 +241,24 @@ useEffect(()=>{
 ## axios와 fetch의 차이
   - axios : JSON을 Object로 자동 변환
   - fetch : 자동으로 자료 변환X Object로 변환하는 과정 필요
+
+## React 배포
+  - `npm run build` -> build 폴더 생성
+  - 첫 페이지 로딩 속도 빠르게 하기 위해서는 [lazy 함수](https://reactjs.org/docs/code-splitting.html#route-based-code-splitting) 이용 가능
+
+## props 대신 사용하는 Context API
+  -`let contextCon = React.createContext()`로 범위 생성
+  - createContext()로 같은 변수값을 공유할 범위를 생성
+  - `<contextCon.Provider></contextCon.Provider>`로 같은 값을 공유할 HTML 범위 지정
+  - `<contextCon.Provider value={ 공유하는 값 }>`
+  - 공유하는 컴포넌트 안에서 `let varName = useContext(contextCon)`으로 공유된 값 저장 후 사용 가능
+
+  - 다른 파일 간에 값 공유하고 싶을 때
+    1. `export let stockContext = React.createContext()` 변수를 export 해서 외부에서 사용 가능하게 준비
+    2. `import { stockContext } from './App.js'` 사용할 파일에서 import
+    3. 그 이후는 상동
+ 
+  - props/Context API 대신 Redux 사용 가능
+    + Redux란 : 모든 컴포넌트 파일들이 같은 값을 공유할 수 있는 저장공간 생성 + state 데이터 관리 기능
+
+

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+
 function ProductItem(props){
   return (
     <div className="col-md-4" >

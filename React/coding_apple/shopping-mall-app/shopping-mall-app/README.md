@@ -14,8 +14,8 @@
 export default variableName
 export { var1, var2 }
 
-import name from './directory.js';
-import { var1, var2 } from './directory.js';
+import name from './directory.js'; // export default 된 컴포넌트 가져오기
+import { var1, var2 } from './directory.js'; // {} 안의 변수, 함수 가져오기
 ```
 ## 상품목록 Component화 + 반복문
   - `/* eslint-disable */` eslint warning 무시하기
@@ -261,4 +261,16 @@ useEffect(()=>{
   - props/Context API 대신 Redux 사용 가능
     + Redux란 : 모든 컴포넌트 파일들이 같은 값을 공유할 수 있는 저장공간 생성 + state 데이터 관리 기능
 
+## animation in React
+  - 애니메이션 class 제작 후 등장/업데이트 될 때 className에 부착하는 방식
+  - 애니메이션 라이브러리 `react-transition-group` 사용
+    1. `npm install `react-transition-group` 설치
+    2. `import { CSSTransition } from 'react-transition-group';
+    3. `<CSSTransition>` 으로 애니메이션 필요한 컴포넌트 감싸기 
+    4. `<CSSTransition in={} className="tabAnimation" timeout={}>` 필요한 속성 추가
+    5. `in={true}` 일 시 애니메이션 동작, false면 동작X, state로 boolean 값 저장해서 사용
+    6. `.tabAnimation-enter` 애니메이션 시작 시 적용되는 CSS
+    7. `.tabAnimation-enter-active` 애니메이션 동작 때 적용되는 CSS
+    8. `.tabAnimation-enter-exit` 애니메이션 마지막에 적용되는 CSS
 
+## 

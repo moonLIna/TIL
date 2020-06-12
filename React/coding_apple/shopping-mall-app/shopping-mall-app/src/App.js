@@ -4,6 +4,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import './App.css';
 import ProductItem from './product.js';
 import ProductDetail from './DetailProduct.js';
+import Cart from './Cart.js';
 import data from './data.js';
 import axios from 'axios';
 
@@ -21,7 +22,7 @@ function App() {
         <Nav className="ml-auto">
           <Nav.Link as={ Link } to="/">Home</Nav.Link>
           <Nav.Link as={ Link } to="/detail/0">Detail</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav.Link as={ Link } to="/cart">Cart</Nav.Link>
         </Nav>
       </Navbar>
       <Switch>
@@ -54,6 +55,9 @@ function App() {
             </button>
             : null
           }
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
         </Route>
         <Route exact path="/detail/:id">
           <stockContext.Provider value={ stock }>

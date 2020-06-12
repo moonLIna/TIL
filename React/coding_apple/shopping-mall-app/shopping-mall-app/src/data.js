@@ -6,6 +6,8 @@ export default [
     price : '36.33 USD',
     src : 'https://t1.daumcdn.net/friends/prod/product/20200128143841521_8809681706940_AW_00.jpg',
     alt : '뒹굴뒹굴할 땐 Ryan 후디가 최고',
+    detailSrc : '../20200128153050077_8809681706964_BW_2.jpg',
+    friendsName: 'Ryan',
   },
   {
     id : 1,
@@ -13,7 +15,9 @@ export default [
     content : '뒹굴뒹굴할 땐 Apeach 후디가 최고',
     price : '36.33 USD',
     src : 'https://t1.daumcdn.net/friends/prod/product/20200128143737958_8809681706957_AW_00.jpg',
-    alt : '뒹굴뒹굴할 땐 Apeach 후디가 최고'
+    alt : '뒹굴뒹굴할 땐 Apeach 후디가 최고',
+    detailSrc : '../20200128153050077_8809681706964_BW_1.jpg',
+    friendsName: 'Apeach',
   },
   {
     id : 2,
@@ -21,6 +25,8 @@ export default [
     content : '뒹굴뒹굴할 땐 Muzi&con 후디가 최고',
     price : '36.33 USD',
     src : 'https://t1.daumcdn.net/friends/prod/product/20200128143702614_8809681706964_AW_00.jpg',
-    alt : '뒹굴뒹굴할 땐 Muzi&con 후디가 최고'
+    alt : '뒹굴뒹굴할 땐 Muzi&con 후디가 최고',
+    detailSrc : '../20200128153050077_8809681706964_BW_0.jpg',
+    friendsName: 'Muzi&con',
   },
 ]

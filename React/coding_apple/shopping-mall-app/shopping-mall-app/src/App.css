@@ -1,1 +1,6 @@
-.image-container {background: url(/background.jpg) no-repeat center; background-size: cover; color: #fff; height: 600px;}
+.image-container {
+  background: url(/background.jpg) no-repeat center; 
+  background-size: cover; 
+  color: #fff; 
+  height: 600px;
+}

@@ -18,9 +18,10 @@ function App() {
   return (
     <div className="App" style={{ marginBottom: 100 + 'px' }}>
       <Navbar bg="light" variant="light">
-        <Navbar.Brand><Link to="/">KAKAO</Link></Navbar.Brand>
+        <Navbar.Brand className="header-logo">
+          <Link to="/">KAKAO</Link>
+        </Navbar.Brand>
         <Nav className="ml-auto">
-          <Nav.Link as={ Link } to="/">Home</Nav.Link>
           <Nav.Link as={ Link } to="/detail/0">Detail</Nav.Link>
           <Nav.Link as={ Link } to="/cart">Cart</Nav.Link>
         </Nav>

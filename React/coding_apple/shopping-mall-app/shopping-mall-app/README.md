@@ -20,9 +20,9 @@ import { var1, var2 } from './directory.js'; // {} 안의 변수, 함수 가져�
 ## 상품목록 Component화 + 반복문
   - `/* eslint-disable */` eslint warning 무시하기
   - props 전송법
-    + 1. `<자식컴포넌트 보낼이름={전송할 state} 다른방식="일반문자"/>`
-    + 2. `function 자식컴포넌트(props){}`
-    + 3. `props.보낼이름` 사용
+    1. `<자식컴포넌트 보낼이름={전송할 state} 다른방식="일반문자"/>`
+    2. `function 자식컴포넌트(props){}`
+    3. `props.보낼이름` 사용
   - map key값 설정 시 return 되는 부분에 key 값 줄 것
 
 ## router 1 : setup
@@ -273,4 +273,60 @@ useEffect(()=>{
     7. `.tabAnimation-enter-active` 애니메이션 동작 때 적용되는 CSS
     8. `.tabAnimation-enter-exit` 애니메이션 마지막에 적용되는 CSS
 
-## 
+## Props 대신 사용하는 Redux 
+  - redux는 props 사용 안하고 하위 컴포넌트가 state를 사용하게 만듬
+  - context API와 동일한 역할이지만 데이터 관리가 더 용이
+
+  1. `npm install redux react-redux` 로 설치
+  2. index.js에 `import { Provider } from 'react-redux'` 로 첨부
+  3. `<Provider>`로 기능 사용할 컴포넌트 감싸기
+  4. `let store = createStore()` 로 state 저장
+  5. `import { createStore } from 'redux'` 로 첨부
+  6. `<Provider store={ store }`로 props 전송
+  7. 하위 컴포넌트들이 redux로 전송한 데이터를 사용하려면 해당 컴포넌트에서 `function storeData(){}`로 function 생성
+  8. `export default connect(storeData)(Cart)` 로 연결
+  9. 연결한 storeData 함수에서 변수로 전달되는 데이터를 받아 props 변환
+  10. `{ props.state[0].title }` 처럼 사용
+
+## reducer/dispatch 로 Redux 데이터 수정
+  - redux에선 state 데이터의 수정 방법을 미리 정의
+  - 대규모 프로젝트에서 필요하지 토이 프로젝트에서는 필요X
+  - redux 사용하면 데이터 변경 시 미리 정의해논 방법으로만 수정이 가능하므로 버그 발견 쉬움, 즉 상태관리 용이
+   
+  1. 데이터 담고 있는 변수 `cartData` 생성
+  2. `function reducer(){ return state }` 함수 생성
+  3. `reducer( state = cartData, action )` 로 `state`와 `cartData` 연결 
+  4. 앞서 사용한 `store`에 `reducer` 를 변수로 전달
+  5. `reducer` 함수는 `state`를 `return` 하는 역할을 하는 함수
+  6. `reducer` 함수에서 `if`문으로 경우의 수 정의
+```javascript
+function reducer( state = cartDate, action ){ //reducer 에는 초기값 필수
+  if( action.type === 'addNum'){ 
+    let tempState = [...state];
+    tempState[0].quan++;
+    
+    return tempState;
+  } else {
+    return state;
+  }
+}
+```
+  7. `dispatch({ type: 'addNum' })`으로 수정 요청
+
+## default parameter 
+  - ES6 신문법
+  - 파라미터가 전달되지 않았을 때 기본으로 가질 초기값 부여
+
+```javascript
+  function F(state = bindingData, action){
+    /* state 초기값을 부등호(=)를 사용해 대입*/
+  }
+```
+
+## state와 reducer가 더 필요할 때
+  1. `state` 가 여러 개 필요 시 해당 `reducer`와 해당 초기값 추가로 만들기
+  2. `createStore(combineReducers())` 힘수 안에 `{}` 배열 자료형으로 넘기기
+  3. 배열 `state` 를 사용하는 컴포넌트의 파일에서 Redux 데이터와 `props` 연결
+
+## dispatch 시 데이터 전달하기
+  - `dispatch({ type: 'typeName'; payload : { data1 : 'data'} })` 로 전달

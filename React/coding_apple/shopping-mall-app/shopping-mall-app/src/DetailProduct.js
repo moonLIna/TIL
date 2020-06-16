@@ -4,6 +4,7 @@ import { Nav } from 'react-bootstrap';
 import './sass.scss';
 import { stockContext } from './App.js';
 import { CSSTransition } from 'react-transition-group';
+import { connect } from 'react-redux';
 
 function ProductDetail(props){
   let stock = useContext(stockContext);
@@ -66,7 +67,24 @@ function ProductDetail(props){
           <p>{ currentProd[0].price }</p>
           <StockInfo prodStock={ props.stockNum[id] }></StockInfo>
           <p>{ currentProd[0].content }</p>
-          <button className="btn btn-danger" onClick={ ()=>{ changeStockNum(id) } }>주문하기</button>
+          <button 
+            className="btn btn-danger" 
+            onClick={ ()=>{ 
+              changeStockNum(id);
+              props.dispatch({ 
+                type: 'addCart', 
+                payload : {
+                  id : currentProd[0].id , 
+                  title : currentProd[0].title, 
+                  quan: 1, 
+                  price : currentProd[0].price,
+                }
+              });
+              history.push('/cart');
+            }}
+          >
+            주문하기
+          </button>
         </div>
       </div>
       <div className="mt-30">
@@ -153,4 +171,12 @@ function StockInfo(props){
     <p> 재고 : { props.prodStock } </p>
   )
 }
-export default ProductDetail;
+
+function storeDate(state){
+  return {
+    state : state.reducer,
+    alertStat : state.reducer2
+  }
+}
+
+export default connect(storeDate)(ProductDetail);

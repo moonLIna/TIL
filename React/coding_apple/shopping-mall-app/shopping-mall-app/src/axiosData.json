@@ -1,0 +1,37 @@
+[
+  { "id" : "appeach1", 
+    "title" : "글리터링튜브_어피치", 
+    "content" : "블링블링 러블리한 어피치 링튜브",
+    "price" : "27.00 USD",
+    "src" : "https://t1.daumcdn.net/friends/prod/product/20200602155700243_8809681709859_AW_00.jpg",
+    "alt" : "글리터링튜브_어피치",
+    "detailSrc" : "https://t1.kakaocdn.net/friends/prod/product/20200603170042182_8809681709859_BW_09.jpg",
+    "friendsName" : "appeach",
+    "quan" : 1,
+    "option" : ""
+  },
+  {
+    "id" : "ryan1", 
+    "title" : "고속무선충전 마우스패드 리틀라이언", 
+    "content" : "귀여움이 빼꼼, 무선충전 마우스패드",
+    "price" : "39.00 USD",
+    "src" : "https://t1.daumcdn.net/friends/prod/product/20200326151033622_8809681707831_AW_00.jpg",
+    "alt" : "고속무선충전 마우스패드 리틀라이언",
+    "detailSrc" : "https://t1.kakaocdn.net/friends/prod/product/20200326150410835_8809681707831_BW_00.jpg",
+    "friendsName" : "ryan",
+    "quan" : 1,
+    "option": ""
+  },
+  {
+    "id" : "ryan2", 
+    "title" : "레트로덕_고속무선충전거치대_라이언", 
+    "content" : "레트로 티브이 위 라이언",
+    "price" : "55.00 USD",
+    "src" : "https://t1.daumcdn.net/friends/prod/product/20200601122103690_8809721501900_AW_00_(1).jpg",
+    "alt" : "레트로덕_고속무선충전거치대_라이언",
+    "detailSrc" : "https://t1.kakaocdn.net/friends/prod/product/20200601122622383_8809721501900_BW_00_(2).jpg",
+    "friendsName" : "ryan",
+    "quan" : 1,
+    "option": ""
+  }
+]
